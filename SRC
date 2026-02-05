@@ -328,13 +328,80 @@ footer strong { color: var(--accent); }
 .inv-option-total .value { font-family: var(--mono); font-size: 1.6rem; color: var(--accent); margin-top: 4px; }
 .inv-option-total .sub { font-size: 0.75rem; color: var(--text2); margin-top: 4px; }
 
+/* COMPETITIVE TABLE */
+.comp-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+.comp-table th { text-align: left; padding: 14px 20px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); border-bottom: 2px solid rgba(0,214,143,0.15); }
+.comp-table td { padding: 14px 20px; font-size: 0.85rem; color: var(--text2); border-bottom: 1px solid rgba(255,255,255,0.04); }
+.comp-table tr:hover td { background: rgba(0,214,143,0.03); }
+.comp-table .comp-name { color: var(--text); font-weight: 600; font-size: 0.9rem; }
+.comp-check { color: var(--accent); font-weight: 700; }
+.comp-cross { color: var(--danger); font-weight: 700; }
+.comp-partial { color: var(--gold); font-weight: 700; }
+.comp-table tr.comp-highlight td { background: rgba(0,214,143,0.06); border-bottom: 2px solid rgba(0,214,143,0.2); }
+.comp-table tr.comp-highlight .comp-name { color: var(--accent); font-size: 1rem; }
+
+/* GTM */
+.gtm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.gtm-card { background: var(--bg2); border: 1px solid rgba(255,255,255,0.04); border-radius: 16px; padding: 32px; transition: all 0.4s; }
+.gtm-card:hover { border-color: rgba(0,214,143,0.15); transform: translateY(-4px); }
+.gtm-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.gtm-card h3 span { font-size: 1.4rem; }
+.gtm-card p { font-size: 0.85rem; color: var(--text2); line-height: 1.7; }
+.gtm-metric { display: inline-block; font-family: var(--mono); color: var(--accent); font-size: 0.8rem; background: rgba(0,214,143,0.08); padding: 3px 10px; border-radius: 6px; margin-top: 10px; }
+.unit-econ { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+.unit-econ-card { text-align: center; padding: 28px 20px; background: var(--bg2); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; }
+.unit-econ-card .ue-value { font-family: var(--mono); font-size: 1.8rem; color: var(--accent); }
+.unit-econ-card .ue-label { font-size: 0.75rem; color: var(--text2); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+.unit-econ-card .ue-detail { font-size: 0.78rem; color: var(--text2); margin-top: 4px; }
+
+/* RISK CARDS */
+.risk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+.risk-card { background: var(--bg2); border: 1px solid rgba(255,255,255,0.04); border-radius: 16px; padding: 32px; transition: all 0.4s; position: relative; overflow: hidden; }
+.risk-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 16px 16px 0 0; }
+.risk-card.risk-high::before { background: var(--danger); }
+.risk-card.risk-med::before { background: var(--gold); }
+.risk-card.risk-low::before { background: var(--accent); }
+.risk-card:hover { border-color: rgba(255,255,255,0.08); transform: translateY(-4px); }
+.risk-level { display: inline-block; font-size: 0.65rem; padding: 3px 10px; border-radius: 100px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+.risk-high .risk-level { background: rgba(255,77,77,0.12); color: var(--danger); }
+.risk-med .risk-level { background: rgba(212,168,83,0.12); color: var(--gold); }
+.risk-low .risk-level { background: rgba(0,214,143,0.1); color: var(--accent); }
+.risk-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+.risk-card p { font-size: 0.85rem; color: var(--text2); line-height: 1.7; margin-bottom: 12px; }
+.risk-mitigation { font-size: 0.82rem; color: var(--text); padding: 12px 16px; background: rgba(0,214,143,0.04); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; line-height: 1.6; }
+.risk-mitigation strong { color: var(--accent); font-weight: 600; }
+
+/* SCENARIO TABLE */
+.scenario-tabs { display: flex; gap: 8px; margin-top: 40px; margin-bottom: 24px; }
+.scenario-tab { padding: 10px 24px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--text2); border-radius: 100px; font-size: 0.8rem; cursor: pointer; transition: all 0.3s; font-family: var(--sans); font-weight: 500; }
+.scenario-tab:hover { border-color: rgba(0,214,143,0.2); }
+.scenario-tab.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.scenario-content { display: none; }
+.scenario-content.active { display: block; animation: fadeUp 0.4s ease-out; }
+.fin-table { width: 100%; border-collapse: collapse; }
+.fin-table thead th { padding: 12px 16px; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text2); border-bottom: 1px solid rgba(0,214,143,0.1); text-align: center; }
+.fin-table thead th:first-child { text-align: left; }
+.fin-table tbody td { padding: 10px 16px; font-size: 0.82rem; color: var(--text2); border-bottom: 1px solid rgba(255,255,255,0.03); text-align: center; font-family: var(--mono); }
+.fin-table tbody td:first-child { text-align: left; font-family: var(--sans); font-weight: 500; color: var(--text); }
+.fin-table tbody tr.break-row { background: rgba(0,214,143,0.06); }
+.fin-table tbody tr.break-row td { color: var(--accent); font-weight: 600; }
+.fin-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.fin-summary-card { text-align: center; padding: 20px; background: rgba(0,214,143,0.04); border-radius: 12px; border: 1px solid rgba(0,214,143,0.1); }
+.fin-summary-card .fs-value { font-family: var(--mono); font-size: 1.4rem; color: var(--accent); }
+.fin-summary-card .fs-label { font-size: 0.72rem; color: var(--text2); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .features-grid, .pricing-grid, .inv-options { grid-template-columns: 1fr; }
   .feature-card.highlight { grid-column: span 1; }
   .metrics-row { grid-template-columns: repeat(2, 1fr); }
-  .contrib-grid { grid-template-columns: 1fr; }
+  .contrib-grid, .risk-grid { grid-template-columns: 1fr; }
+  .gtm-grid { grid-template-columns: 1fr; }
+  .unit-econ, .fin-summary { grid-template-columns: 1fr; }
+  .scenario-tabs { flex-wrap: wrap; }
+  .comp-table { font-size: 0.75rem; }
+  .comp-table th, .comp-table td { padding: 10px 12px; }
   .hero-stats { flex-direction: column; gap: 20px; }
   .section { padding: 80px 24px; }
   .founders-names { flex-direction: column; gap: 20px; }
@@ -362,7 +429,10 @@ footer strong { color: var(--accent); }
     <a href="#problema">Problema</a>
     <a href="#solucao">Solução</a>
     <a href="#mercado">Mercado</a>
+    <a href="#concorrentes">Concorrentes</a>
+    <a href="#gtm">Go-to-Market</a>
     <a href="#investimento">Investimento</a>
+    <a href="#riscos">Riscos</a>
     <a href="#proximos">Roadmap</a>
   </div>
 </nav>
@@ -643,10 +713,174 @@ footer strong { color: var(--accent); }
 
 <div class="sep"></div>
 
+<!-- ANÁLISE COMPETITIVA -->
+<section class="section" id="concorrentes">
+  <div class="reveal">
+    <div class="section-tag">04 — Análise Competitiva</div>
+    <h2 class="section-title">Conhecemos o campo de batalha.<br><em>E sabemos onde atacar.</em></h2>
+    <p class="section-desc">
+      O mercado de fidelização possui soluções fragmentadas, caras ou limitadas. 
+      Nenhuma oferece o pacote completo que o CLIENTÃO entrega — especialmente 
+      para o varejo de proximidade.
+    </p>
+  </div>
+
+  <div style="overflow-x: auto;">
+    <table class="comp-table reveal">
+      <thead>
+        <tr>
+          <th>Concorrente</th>
+          <th style="text-align:center;">Fidelidade</th>
+          <th style="text-align:center;">WhatsApp IA</th>
+          <th style="text-align:center;">Gamificação</th>
+          <th style="text-align:center;">Mapa 3D</th>
+          <th style="text-align:center;">Multi-tenant</th>
+          <th style="text-align:center;">Preço/mês</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="comp-name">Fidelizi</td>
+          <td style="text-align:center;" class="comp-check">✓</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-partial">~</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;">R$299+</td>
+        </tr>
+        <tr>
+          <td class="comp-name">Programa Stone</td>
+          <td style="text-align:center;" class="comp-check">✓</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;">Atrelado à maquininha</td>
+        </tr>
+        <tr>
+          <td class="comp-name">Pprogram.AI</td>
+          <td style="text-align:center;" class="comp-check">✓</td>
+          <td style="text-align:center;" class="comp-partial">~</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;">R$500+</td>
+        </tr>
+        <tr>
+          <td class="comp-name">Cartão Carimbo / Caseiro</td>
+          <td style="text-align:center;" class="comp-partial">~</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;" class="comp-cross">✗</td>
+          <td style="text-align:center;">Custo gráfica</td>
+        </tr>
+        <tr class="comp-highlight">
+          <td class="comp-name">🏆 CLIENTÃO</td>
+          <td style="text-align:center;" class="comp-check">✓</td>
+          <td style="text-align:center;" class="comp-check">✓</td>
+          <td style="text-align:center;" class="comp-check">✓</td>
+          <td style="text-align:center;" class="comp-check">✓</td>
+          <td style="text-align:center;" class="comp-check">✓</td>
+          <td style="text-align:center;">A partir de R$199</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="problem-grid" style="margin-top: 48px;">
+    <div class="problem-card reveal" style="border-color: rgba(0,214,143,0.08);">
+      <div class="problem-icon" style="background: rgba(0,214,143,0.08);">🎯</div>
+      <h3>Vantagem competitiva #1</h3>
+      <p>Plataforma <strong style="color: var(--accent);">all-in-one</strong>: fidelidade + comunicação + gamificação + analytics em um único produto. Concorrentes exigem integrar 3-4 ferramentas diferentes.</p>
+    </div>
+    <div class="problem-card reveal reveal-delay-1" style="border-color: rgba(0,214,143,0.08);">
+      <div class="problem-icon" style="background: rgba(0,214,143,0.08);">💰</div>
+      <h3>Vantagem competitiva #2</h3>
+      <p>Preço agressivo para o varejo de proximidade: <strong style="color: var(--accent);">R$199/mês</strong> vs R$300-500+ dos concorrentes — com mais funcionalidades incluídas.</p>
+    </div>
+    <div class="problem-card reveal reveal-delay-2" style="border-color: rgba(0,214,143,0.08);">
+      <div class="problem-icon" style="background: rgba(0,214,143,0.08);">🗺️</div>
+      <h3>Vantagem competitiva #3</h3>
+      <p><strong style="color: var(--accent);">Mapa 3D interativo</strong> com Three.js — diferencial exclusivo. Nenhum concorrente direto ou indireto oferece navegação virtual na loja.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- GO-TO-MARKET -->
+<section class="section" id="gtm">
+  <div class="reveal">
+    <div class="section-tag">05 — Go-to-Market</div>
+    <h2 class="section-title">Estratégia clara para<br><em>conquistar o mercado</em></h2>
+    <p class="section-desc">
+      Abordagem focada no varejo de proximidade regional, com ciclo de vendas curto, 
+      piloto gratuito como porta de entrada e expansão por indicação.
+    </p>
+  </div>
+
+  <div class="gtm-grid">
+    <div class="gtm-card reveal">
+      <h3><span>🎯</span> Prospecção Ativa</h3>
+      <p>Vendedor comercial visitando supermercados, farmácias e pet shops da região. Abordagem consultiva mostrando ROI imediato. Foco em cidades de 50-300K habitantes.</p>
+      <div class="gtm-metric">Meta: 40 visitas/mês</div>
+    </div>
+    <div class="gtm-card reveal reveal-delay-1">
+      <h3><span>🎁</span> Piloto Gratuito (30 dias)</h3>
+      <p>Onboarding sem custo por 30 dias para eliminar objeções. O lojista vê resultados antes de pagar. Taxa de conversão esperada: 60-70% pós-piloto.</p>
+      <div class="gtm-metric">Conversão: 60-70%</div>
+    </div>
+    <div class="gtm-card reveal reveal-delay-2">
+      <h3><span>🤝</span> Parcerias Estratégicas</h3>
+      <p>Associações comerciais (ACISC, CDL), distribuidoras de alimentos e consultorias de varejo como canais de indicação. Comissão de 15-20% no primeiro ano.</p>
+      <div class="gtm-metric">Canal indireto escalável</div>
+    </div>
+    <div class="gtm-card reveal reveal-delay-3">
+      <h3><span>📈</span> Expansão por Indicação</h3>
+      <p>Programa de referral: lojistas que indicam novos clientes ganham 1 mês grátis. Efeito rede dentro de associações e grupos de WhatsApp do setor.</p>
+      <div class="gtm-metric">NPS alvo: &gt;50</div>
+    </div>
+  </div>
+
+  <h3 style="font-family: var(--serif); font-size: 1.4rem; margin-top: 64px; margin-bottom: 8px;" class="reveal">Unit Economics</h3>
+  <p style="color: var(--text2); font-size: 0.9rem; margin-bottom: 8px;" class="reveal">Métricas unitárias que validam a sustentabilidade do modelo</p>
+  
+  <div class="unit-econ reveal">
+    <div class="unit-econ-card">
+      <div class="ue-value">R$800</div>
+      <div class="ue-label">CAC estimado</div>
+      <div class="ue-detail">Vendedor + demo + onboarding</div>
+    </div>
+    <div class="unit-econ-card">
+      <div class="ue-value">R$8.400</div>
+      <div class="ue-label">LTV (24 meses)</div>
+      <div class="ue-detail">Ticket médio R$350 × 24m</div>
+    </div>
+    <div class="unit-econ-card">
+      <div class="ue-value">10.5x</div>
+      <div class="ue-label">LTV / CAC</div>
+      <div class="ue-detail">Acima de 3x = saudável</div>
+    </div>
+    <div class="unit-econ-card">
+      <div class="ue-value">&lt;5%</div>
+      <div class="ue-label">Churn mensal alvo</div>
+      <div class="ue-detail">Mitigado por lock-in de dados</div>
+    </div>
+    <div class="unit-econ-card">
+      <div class="ue-value">2.3 meses</div>
+      <div class="ue-label">Payback por cliente</div>
+      <div class="ue-detail">CAC recuperado rápido</div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
 <!-- INVESTIMENTO -->
 <section class="section" id="investimento">
   <div class="reveal">
-    <div class="section-tag">04 — Investimento</div>
+    <div class="section-tag">06 — Investimento</div>
     <h2 class="section-title">O sistema já existe.<br>Falta o investimento para <em>ir ao mercado.</em></h2>
     <p class="section-desc">
       O produto está funcional. O investimento é para profissionalizar, 
@@ -756,10 +990,90 @@ footer strong { color: var(--accent); }
       </div>
     </div>
 
-    <!-- ROI -->
-    <h3 style="font-family: var(--serif); font-size: 1.8rem; margin-top: 64px; margin-bottom: 8px;">Projeção de Retorno</h3>
-    <p style="color: var(--text2); font-size: 0.9rem; margin-bottom: 8px;">Breakeven em 4-6 meses com cenário conservador (10 lojas/mês, ticket médio R$350)</p>
+    <!-- PROJEÇÕES FINANCEIRAS DETALHADAS -->
+    <h3 style="font-family: var(--serif); font-size: 1.8rem; margin-top: 64px; margin-bottom: 8px;">Projeções Financeiras Detalhadas</h3>
+    <p style="color: var(--text2); font-size: 0.9rem; margin-bottom: 8px;">Três cenários de crescimento — clique para alternar entre eles</p>
 
+    <div class="scenario-tabs">
+      <button class="scenario-tab" onclick="switchScenario('pessimista')" id="tab-pessimista">📉 Pessimista</button>
+      <button class="scenario-tab active" onclick="switchScenario('conservador')" id="tab-conservador">📊 Conservador</button>
+      <button class="scenario-tab" onclick="switchScenario('otimista')" id="tab-otimista">📈 Otimista</button>
+    </div>
+
+    <!-- PESSIMISTA -->
+    <div class="scenario-content" id="scenario-pessimista">
+      <p style="color: var(--text2); font-size: 0.85rem; margin-bottom: 16px; line-height: 1.6;">
+        <strong style="color: var(--danger);">Premissa:</strong> 5 lojas novas/mês, ticket médio R$280, churn 8%/mês. Cenário de baixa conversão e mercado mais resistente.
+      </p>
+      <table class="fin-table">
+        <thead><tr><th>Período</th><th>Lojas Ativas</th><th>MRR</th><th>Custo Mensal</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>Mês 3</td><td>14</td><td>R$ 3.920</td><td>R$ 38.500</td><td style="color: var(--danger);">-R$ 34.580</td></tr>
+          <tr><td>Mês 6</td><td>26</td><td>R$ 7.280</td><td>R$ 38.500</td><td style="color: var(--danger);">-R$ 31.220</td></tr>
+          <tr><td>Mês 9</td><td>36</td><td>R$ 10.080</td><td>R$ 35.000</td><td style="color: var(--danger);">-R$ 24.920</td></tr>
+          <tr class="break-row"><td>Mês 12</td><td>44</td><td>R$ 12.320</td><td>R$ 35.000</td><td style="color: var(--danger);">-R$ 22.680</td></tr>
+          <tr><td>Mês 18</td><td>62</td><td>R$ 17.360</td><td>R$ 35.000</td><td style="color: var(--danger);">-R$ 17.640</td></tr>
+          <tr class="break-row"><td>Mês 24</td><td>78</td><td>R$ 21.840</td><td>R$ 35.000</td><td style="color: var(--danger);">-R$ 13.160</td></tr>
+        </tbody>
+      </table>
+      <div class="fin-summary">
+        <div class="fin-summary-card"><div class="fs-value" style="color: var(--danger);">Não atinge</div><div class="fs-label">Breakeven em 24m</div></div>
+        <div class="fin-summary-card"><div class="fs-value">R$12K</div><div class="fs-label">MRR mês 12</div></div>
+        <div class="fin-summary-card"><div class="fs-value">R$88K</div><div class="fs-label">Receita acum. ano 1</div></div>
+      </div>
+      <div class="risk-mitigation" style="margin-top: 24px;">
+        <strong>Plano de contingência:</strong> Se este cenário se materializar, reduzir custo fixo cortando designer (UI/UX freelancer pontual), focar em 1 vertical (supermercados) e ajustar pricing para plano anual com desconto, garantindo receita previsível.
+      </div>
+    </div>
+
+    <!-- CONSERVADOR -->
+    <div class="scenario-content active" id="scenario-conservador">
+      <p style="color: var(--text2); font-size: 0.85rem; margin-bottom: 16px; line-height: 1.6;">
+        <strong style="color: var(--accent);">Premissa:</strong> 10 lojas novas/mês, ticket médio R$350, churn 5%/mês. Base case com crescimento gradual e previsível.
+      </p>
+      <table class="fin-table">
+        <thead><tr><th>Período</th><th>Lojas Ativas</th><th>MRR</th><th>Custo Mensal</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>Mês 3</td><td>28</td><td>R$ 9.800</td><td>R$ 38.500</td><td style="color: var(--danger);">-R$ 28.700</td></tr>
+          <tr class="break-row"><td>Mês 5</td><td>45</td><td>R$ 15.750</td><td>R$ 38.500</td><td style="color: var(--danger);">-R$ 22.750</td></tr>
+          <tr><td>Mês 6</td><td>53</td><td>R$ 18.550</td><td>R$ 38.500</td><td style="color: var(--danger);">-R$ 19.950</td></tr>
+          <tr><td>Mês 9</td><td>76</td><td>R$ 26.600</td><td>R$ 35.000</td><td style="color: var(--danger);">-R$ 8.400</td></tr>
+          <tr class="break-row"><td>Mês 11</td><td>88</td><td>R$ 30.800</td><td>R$ 35.000</td><td style="color: var(--danger);">-R$ 4.200</td></tr>
+          <tr style="background: rgba(0,214,143,0.08);"><td style="color: var(--accent); font-weight: 700;">Mês 12 🎯</td><td style="color: var(--accent);">95</td><td style="color: var(--accent);">R$ 33.250</td><td>R$ 35.000</td><td style="color: var(--accent);">-R$ 1.750</td></tr>
+          <tr class="break-row"><td>Mês 14 ✅</td><td>108</td><td>R$ 37.800</td><td>R$ 35.000</td><td style="color: var(--accent);">+R$ 2.800</td></tr>
+        </tbody>
+      </table>
+      <div class="fin-summary">
+        <div class="fin-summary-card"><div class="fs-value" style="color: var(--success);">Mês 12-14</div><div class="fs-label">Breakeven</div></div>
+        <div class="fin-summary-card"><div class="fs-value">R$33K</div><div class="fs-label">MRR mês 12</div></div>
+        <div class="fin-summary-card"><div class="fs-value">R$252K</div><div class="fs-label">Receita acum. ano 1</div></div>
+      </div>
+    </div>
+
+    <!-- OTIMISTA -->
+    <div class="scenario-content" id="scenario-otimista">
+      <p style="color: var(--text2); font-size: 0.85rem; margin-bottom: 16px; line-height: 1.6;">
+        <strong style="color: var(--success);">Premissa:</strong> 18 lojas novas/mês, ticket médio R$400, churn 3%/mês. Cenário com boa tração comercial, parcerias ativas e alta taxa de conversão.
+      </p>
+      <table class="fin-table">
+        <thead><tr><th>Período</th><th>Lojas Ativas</th><th>MRR</th><th>Custo Mensal</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>Mês 3</td><td>52</td><td>R$ 20.800</td><td>R$ 38.500</td><td style="color: var(--danger);">-R$ 17.700</td></tr>
+          <tr class="break-row"><td>Mês 5</td><td>85</td><td>R$ 34.000</td><td>R$ 38.500</td><td style="color: var(--danger);">-R$ 4.500</td></tr>
+          <tr style="background: rgba(0,214,143,0.08);"><td style="color: var(--accent); font-weight: 700;">Mês 6 ✅</td><td style="color: var(--accent);">100</td><td style="color: var(--accent);">R$ 40.000</td><td>R$ 38.500</td><td style="color: var(--accent);">+R$ 1.500</td></tr>
+          <tr><td>Mês 9</td><td>148</td><td>R$ 59.200</td><td>R$ 45.000</td><td style="color: var(--accent);">+R$ 14.200</td></tr>
+          <tr class="break-row"><td>Mês 12</td><td>192</td><td>R$ 76.800</td><td>R$ 50.000</td><td style="color: var(--accent);">+R$ 26.800</td></tr>
+        </tbody>
+      </table>
+      <div class="fin-summary">
+        <div class="fin-summary-card"><div class="fs-value" style="color: var(--success);">Mês 6</div><div class="fs-label">Breakeven</div></div>
+        <div class="fin-summary-card"><div class="fs-value">R$77K</div><div class="fs-label">MRR mês 12</div></div>
+        <div class="fin-summary-card"><div class="fs-value">R$516K</div><div class="fs-label">Receita acum. ano 1</div></div>
+      </div>
+    </div>
+
+    <!-- ROI CHART (conservador) -->
+    <h4 style="font-family: var(--serif); font-size: 1.3rem; margin-top: 48px; margin-bottom: 8px;">Gráfico Visual — Cenário Conservador</h4>
     <div class="roi-chart" id="roiChart"></div>
     <div class="roi-legend">
       <div class="roi-legend-item"><div class="roi-legend-dot" style="background: #ff4d4d;"></div>Custo mensal</div>
@@ -768,15 +1082,15 @@ footer strong { color: var(--accent); }
 
     <div class="metrics-row" style="margin-top: 48px;">
       <div class="metric-box">
-        <div class="metric-value" style="color: var(--success);">Mês 5</div>
-        <div class="metric-label">Breakeven estimado</div>
+        <div class="metric-value" style="color: var(--success);">Mês 12-14</div>
+        <div class="metric-label">Breakeven (conservador)</div>
       </div>
       <div class="metric-box">
-        <div class="metric-value">60</div>
+        <div class="metric-value">95</div>
         <div class="metric-label">Lojas ativas ao final do ano 1</div>
       </div>
       <div class="metric-box">
-        <div class="metric-value" style="color: var(--gold);">R$21K</div>
+        <div class="metric-value" style="color: var(--gold);">R$33K</div>
         <div class="metric-label">MRR projetado mês 12</div>
       </div>
       <div class="metric-box">
@@ -799,7 +1113,7 @@ footer strong { color: var(--accent); }
 <!-- O QUE EU TRAGO -->
 <section class="section" id="contribuicao">
   <div class="reveal">
-    <div class="section-tag">05 — Minha Contribuição</div>
+    <div class="section-tag">07 — Minha Contribuição</div>
     <h2 class="section-title">O que já foi feito e<br><em>o que eu trago pra mesa</em></h2>
     <p class="section-desc">
       Esse sistema não é uma ideia em slide. É um produto funcional com 
@@ -828,10 +1142,80 @@ footer strong { color: var(--accent); }
 
 <div class="sep"></div>
 
+<!-- ANÁLISE DE RISCOS -->
+<section class="section" id="riscos">
+  <div class="reveal">
+    <div class="section-tag">08 — Análise de Riscos</div>
+    <h2 class="section-title">Riscos mapeados,<br><em>mitigações definidas</em></h2>
+    <p class="section-desc">
+      Todo negócio tem riscos. A diferença está em conhecê-los antecipadamente 
+      e ter planos claros de mitigação para cada um.
+    </p>
+  </div>
+
+  <div class="risk-grid">
+    <div class="risk-card risk-high reveal">
+      <span class="risk-level">Risco Alto</span>
+      <h3>📉 Baixa adoção inicial</h3>
+      <p>Lojistas podem resistir a adotar tecnologia nova, especialmente no varejo de proximidade onde a digitalização é baixa.</p>
+      <div class="risk-mitigation">
+        <strong>Mitigação:</strong> Piloto gratuito de 30 dias elimina barreira financeira. Onboarding assistido com treinamento presencial. Foco em resultados mensuráveis nas primeiras 2 semanas (aumento de recompra).
+      </div>
+    </div>
+
+    <div class="risk-card risk-high reveal reveal-delay-1">
+      <span class="risk-level">Risco Alto</span>
+      <h3>🏃 Dependência de pessoas-chave</h3>
+      <p>Josimar concentra todo o conhecimento técnico e de produto. Se ele sair ou ficar indisponível, o projeto para.</p>
+      <div class="risk-mitigation">
+        <strong>Mitigação:</strong> Contratação de dev sênior no mês 1 para transferência de conhecimento. Documentação técnica completa. Codebase organizado e versionado no GitHub. Vesting de 2 anos alinha incentivos de longo prazo.
+      </div>
+    </div>
+
+    <div class="risk-card risk-med reveal reveal-delay-2">
+      <span class="risk-level">Risco Médio</span>
+      <h3>⚔️ Entrada de concorrentes grandes</h3>
+      <p>Empresas como iFood, Stone ou Ifood poderiam lançar módulos de fidelidade integrados às suas plataformas existentes.</p>
+      <div class="risk-mitigation">
+        <strong>Mitigação:</strong> Velocidade de execução — já temos 98K linhas prontas. Foco em nicho (varejo de proximidade) que grandes ignoram. Funcionalidades exclusivas (Mapa 3D, gamificação avançada) criam barreira de switching cost.
+      </div>
+    </div>
+
+    <div class="risk-card risk-med reveal reveal-delay-3">
+      <span class="risk-level">Risco Médio</span>
+      <h3>💸 Churn elevado</h3>
+      <p>Clientes podem cancelar após poucos meses se não perceberem valor suficiente ou se o orçamento apertar.</p>
+      <div class="risk-mitigation">
+        <strong>Mitigação:</strong> Lock-in natural pelos dados de clientes acumulados. Dashboard de ROI mostrando impacto financeiro em tempo real. Planos anuais com desconto de 20%. Customer success ativo nos primeiros 90 dias.
+      </div>
+    </div>
+
+    <div class="risk-card risk-low reveal">
+      <span class="risk-level">Risco Baixo</span>
+      <h3>🔧 Risco técnico / escalabilidade</h3>
+      <p>O sistema pode apresentar problemas de performance com alto volume de dados ou requisições simultâneas.</p>
+      <div class="risk-mitigation">
+        <strong>Mitigação:</strong> Stack moderna (Next.js + Supabase + Vercel) com auto-scaling nativo. Arquitetura multi-tenant já implementada. Testes de carga previstos no mês 1-2 da operação.
+      </div>
+    </div>
+
+    <div class="risk-card risk-low reveal reveal-delay-1">
+      <span class="risk-level">Risco Baixo</span>
+      <h3>📜 Risco regulatório (LGPD)</h3>
+      <p>Tratamento de dados pessoais de clientes finais exige conformidade com a LGPD e boas práticas de privacidade.</p>
+      <div class="risk-mitigation">
+        <strong>Mitigação:</strong> Sistema já construído com consentimento explícito, criptografia de dados sensíveis e controle de acesso por permissões. Política de privacidade e termos de uso prontos para customização por cliente.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
 <!-- ROADMAP -->
 <section class="section" id="proximos">
   <div class="reveal">
-    <div class="section-tag">06 — Próximos Passos</div>
+    <div class="section-tag">09 — Próximos Passos</div>
     <h2 class="section-title">Do protótipo ao primeiro cliente<br>em <em>60 dias</em></h2>
   </div>
   <div class="timeline">
@@ -879,7 +1263,7 @@ footer strong { color: var(--accent); }
 </section>
 
 <footer>
-  <p>CLIENTÃO v2.0 — Business Plan Confidencial — Fevereiro 2026</p>
+  <p>CLIENTÃO v3.0 — Business Plan Confidencial — Fevereiro 2026</p>
 </footer>
 
 <script>
@@ -945,6 +1329,13 @@ function buildROIChart() {
     const lb = document.createElement('div'); lb.className = 'roi-month'; lb.textContent = d.m;
     g.appendChild(cont); g.appendChild(lb); chart.appendChild(g);
   });
+}
+// SCENARIO TABS
+function switchScenario(name) {
+  document.querySelectorAll('.scenario-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.scenario-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.getElementById('scenario-' + name).classList.add('active');
 }
 </script>
 </body>
